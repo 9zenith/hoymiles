@@ -204,7 +204,7 @@ class Hoymiles(object):
             self.logger.debug(f"solar_data: {self.solar_data}")
             if not self.solar_data['real_power']:
                 self.logger.warning("REAL_POWER = 0")
-                time.sleep(900)  # espera 60 segundos
+                time.sleep(300)  # espera 60 segundos
                 self.logger.info("Getting data again")
                 status, self.solar_data = self.request_solar_data()
 
