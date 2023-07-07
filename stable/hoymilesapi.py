@@ -61,7 +61,7 @@ class Micros(PlantObject):
             }
     def __init__(self, micro_data: dict) -> None:
         super(Micros, self).__init__(micro_data)
-        self.init_hard_no = micro_data['init_hard_no']
+        self.init_hard_no = micro_data['model_no']
 
 
 class Hoymiles(object):
