@@ -284,13 +284,13 @@ class Hoymiles(object):
         if int(status) == 0:
             for hw_data in hws_data:
                 try:
-                    dtu_data = hw_data['dtu']
+                    dtu_data = hw_data
                     self.dtu_list.append(Dtu(dtu_data))
                 except Exception as err:
                     self.logger.error(f"request_plant_hw dtu {err}")
 
-                if 'micros' in hw_data['repeater_list'][0].keys():
-                    for micro in hw_data['repeater_list'][0]['micros']:
+                if 'children' in hw_data.keys():
+                    for micro in hw_data['children']:
                         self.micro_list.append(Micros(micro))
 
     def update_devices_status(self):
